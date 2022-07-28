@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy Responsive Web Design</title>
+</head>
+<body>
+
+  <h1 id="title">Community Volunteer Form</h1>
+  <p id="description">Thank you for taking the time to support the Community</p>
+
+  <div id="form-wrapper">
+    <form action="" id="survey-form">
+      <label for="name" id="name-label">Enter your name</label>
+      <input type="text" id="name" required placeholder="Enter your name">
+      <label for="email" id="email-label">Enter your Email</label>
+      <input type="email" id="email" required placeholder="Enter your Email">
+      <label for="number" id="number-label">Age</label>
+      <input type="number" id="number" min="18" max="60" placeholder="Age">
+      <select name="" id="dropdown">
+        <option value="">Student</option>
+        <option value="">Worker</option>
+        <option value="">Other</option>
+      </select>
+      <button name="radio-buttons">
+        <input type="radio" name="preference" value="Sure"> Sure
+        <input type="radio" name="preference" value="Maybe"> Maybe
+        <input type="radio" name="preference" value="No"> No
+      </button>
+  
+      <button name="checkboxes">
+        <input type="checkbox" name="suggestion" value="Front-end" class="survey-form"> Front-end
+        <input type="checkbox" name="suggestion" value="Back-end" class="survey-form"> Back-end
+        <input type="checkbox" name="suggestion" value="Challenges" class="survey-form"> Challenges
+      </button>
+  
+      <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+      <input type="submit" id="submit">
+    </form>
+  </div>
+</body>
+</html>
