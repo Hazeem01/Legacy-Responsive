@@ -5,41 +5,158 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legacy Responsive Web Design</title>
+  <title>Volunteer Today | Omoade Communities.ng</title>
 </head>
 <body>
 
   <h1 id="title">Community Volunteer Form</h1>
-  <p id="description">Thank you for taking the time to support the Community</p>
+  <p id="description">Thank you for taking your time to support the Community</p>
 
-  <div id="form-wrapper">
-    <form action="" id="survey-form">
-      <label for="name" id="name-label">Enter your name</label>
-      <input type="text" id="name" required placeholder="Enter your name">
-      <label for="email" id="email-label">Enter your Email</label>
-      <input type="email" id="email" required placeholder="Enter your Email">
-      <label for="number" id="number-label">Age</label>
-      <input type="number" id="number" min="18" max="60" placeholder="Age">
-      <select name="" id="dropdown">
-        <option value="">Student</option>
-        <option value="">Worker</option>
-        <option value="">Other</option>
-      </select>
-      <button name="radio-buttons">
-        <input type="radio" name="preference" value="Sure"> Sure
-        <input type="radio" name="preference" value="Maybe"> Maybe
-        <input type="radio" name="preference" value="No"> No
-      </button>
-  
-      <button name="checkboxes">
-        <input type="checkbox" name="suggestion" value="Front-end" class="survey-form"> Front-end
-        <input type="checkbox" name="suggestion" value="Back-end" class="survey-form"> Back-end
-        <input type="checkbox" name="suggestion" value="Challenges" class="survey-form"> Challenges
-      </button>
-  
-      <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-      <input type="submit" id="submit">
-    </form>
+  <div id="eligibilityModal" class="modal">
+    <div id="eligibilityModalHeader">
+      <span class="close">&times;</span>
+      <h2>Eligibility</h2>
+    </div>
+    <ol id="eligibilityList">
+      <li>You must be at least <strong>18</strong> and not more than <strong>60</strong> years of age</li>
+      <li>You must be a <strong>resident</strong> of this community</li>
+      <li>You should be available for volunteer services for at least <strong>10 hours a week</strong></li>
+      <li>You should be a <strong>citizen of an African country</strong>, or have spent at least <strong>3 years in any ECOWAS state</strong> or <strong>5 years in any African country</strong> aside ECOWAS</li>
+      <li>You agree that your services would be free of charge, <strong>you are not expecting any monetary reward or compensation</strong> (NB: We do provide awards and Certificate for qualified participants)</li>
+      <li>You agree to our <strong>Terms and Conditions</strong></li>
+    </ol>
   </div>
+
+  <div id="formWrapper">
+
+    <button id="eligibilityButton">Check Eligibility</button>
+
+    <form action="" id="mainForm">
+      <fieldset>
+      <legend>Volunteer Registration Form</legend>
+
+      <form action="" id="personalInformationsForm">
+        <fieldset>
+          <legend>Personal Informations</legend>
+          <label for="name"> Your name </label><br>
+          <input type="text" id="firstName" required placeholder="First Name">
+          <input type="text" id="lastName" required placeholder="Last Name"><br><br>
+          <label for="bDay"> Date of Birth </label><br>
+          <input type="date" id="bDay" max="01-01-2004" min="01-01-1962" required><br><br>
+          <address>
+            <label for="address"> Home Address </label><br>
+            <input type="address" name="address" placeholder="Street address" required>
+            <input type="address" name="address" placeholder="City" required>
+            <input type="address" name="address" value="Lagos" readonly required>
+          </address><br>
+          <label for="email"> Your Email </label><br>
+          <input type="email" id="email" required placeholder="Enter your Email"><br><br>
+          <label for="telephone"> Telephone </label><br>
+          <input type="tel" name="telephone" id="mobilePhone" placeholder="Mobile Phone" minlength="11" maxlength="11" required>
+          <input type="tel" name="telephone" id="homePhone" placeholder="Home Phone" minlength="11" maxlength="11">
+        </fieldset>
+      </form><br>
+
+      <form action="" id="civilStatusForm">
+        <fieldset>
+          <legend>Civil Status</legend>
+          <label for="professionalStatus"> What is your professional status ? </label><br>
+      <select name="professionalStatus" id="professionalStatus" required><br>
+        <option value="Student">Student</option>
+        <option value="Worker">Worker</option>
+        <option value="Other">Other</option>
+      </select><br><br>
+      <form id="studentForm" class="professionalForm" action="">
+        <label for="studentSchool">What is the name of your school ?</label><br>
+        <input type="text" name="studentSchool" id="" placeholder="School Name" required maxlength="30" minlength="2"><br><br>
+        <label for="studentDegree">Select your current study level</label><br>
+        <select name="studentCourse" id="">
+          <option value="Secondary School">Secondary School</option>
+          <option value="Undergraduate">Undergraduate</option>
+          <option value="Masters">Masters</option>
+          <option value="Phd">Phd</option>
+          <option value="Others">Others(Pls Specify)</option>
+        </select><br>
+        <input type="text" name="Undergraduate" placeholder="Others"><br><br>
+        <label for="studentCourse">What course are you studying ?</label><br>
+        <input type="text" name="studentCourse" id="" placeholder="Course of study" required minlength="2" maxlength="30"><br><br>
+      </form>
+      <form id="workerForm" class="professionalForm" action="">
+
+      </form>
+      <form id="otherForm" class="professionalForm" action="">
+
+      </form>
+
+      <label for="maritalStatus"> What is your marital status ? </label><br>
+      <select name="maritalStatus" id="maritalStatus" required><br>
+        <option value="Single">Single</option>
+        <option value="Married">Married</option>
+        <option value="Divorced">Divorced</option>
+        <option value="Widowed">Widowed</option>
+      </select><br>
+        </fieldset>
+      </form><br>
+
+      <form action="" id="programInformationForm">
+        <fieldset>
+          <legend>Program Information</legend>
+          <label for="availability"> Will you be available for at least 10 hours a week ? </label><br>
+          <button name="availability" id="availability" required>
+            <input type="radio" name="preference" value="Sure"> Sure
+            <input type="radio" name="preference" value="Maybe"> Maybe
+            <input type="radio" name="preference" value="No"> No
+          </button>
+          <input type="text" id="noAvailabilityForm" class="" required maxlength="30"></input><br><br>
+
+          <div id="volunteerAreaDiv">
+            <label for="volunteerArea"> In what professional area do you plan to support the community with? </label>
+            <label for="Technology">
+              <input type="checkbox" name="volunteerArea" value="Technology" class="survey-form">Technology
+            </label> 
+            <label for="Buisness">
+              <input type="checkbox" name="volunteerArea" value="Buisness" class="survey-form">Buisness
+            </label> 
+            <label for="Team-Lead">
+              <input type="checkbox" name="volunteerArea" value="Team-Lead" class="survey-form">Team-Lead
+            </label> 
+            <label for="Clerical Work ">
+              <input type="checkbox" name="volunteerArea" value="Clerical Work" id="">Clerical Work
+            </label>  
+            <label for="Door-to-Door">
+              <input type="checkbox" name="volunteerArea" value="Door-to-Door" id="">Door-to-Door
+            </label>
+            <label for="Delievering Flyers">
+              <input type="checkbox" name="volunteerArea" value="Delievering Flyers" id="">Delievering Flyers
+            </label> 
+            <label for="Taking Phone Calls">
+              <input type="checkbox" name="volunteerArea" value="Taking Phone Calls" id="">Taking Phone Calls
+            </label> 
+            <label for="Entering Data">
+              <input type="checkbox" name="volunteerArea" value="Entering Data" id="">Entering Data
+            </label> 
+            <label for="Public Relations">
+              <input type="checkbox" name="volunteerArea" value="Public Relations" id="">Public Relations
+            </label><br>
+            <textarea name="comment" id="comment" required minlength="50" placeholder="Why do you want join this volunteer program"></textarea>
+          </div>
+          <br>
+          </fieldset>
+      </form><br>
+
+      <input type="checkbox" name="TC" id="tc" required> 
+      <label for="TC">I am Aware of the Terms and Conditions and I Agree</label><br>
+      <input type="checkbox" name="subscription" checked> 
+      <label for="subscription">Subscribe to our weekly Communities newsletters</label><br><br>
+      <input type="submit" id="submit"><br>
+
+      </fieldset>
+    </form>
+    <footer>
+      <span>Hazeem&reg;</span><br>
+      <span>&copy;2022</span>
+    </footer>
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
